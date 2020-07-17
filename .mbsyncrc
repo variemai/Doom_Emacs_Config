@@ -1,0 +1,49 @@
+IMAPAccount forth
+Host mailhost.ics.forth.gr
+User vardas
+PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.emacs.d/.mbsyncpassFORTH.gpg"
+Port 993
+SSLType IMAPS
+AuthMechs Login
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore forth-remote
+Account forth
+
+MaildirStore forth-local
+Path ~/Maildir/forth/
+Inbox ~/Maildir/forth/INBOX/
+SubFolders Verbatim
+
+Channel forth
+Master :forth-remote:
+Slave :forth-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
+
+IMAPAccount hotmail
+Host outlook.office365.com
+User johnvardas@hotmail.com
+PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.emacs.d/.mbsyncpass.gpg"
+Port 993
+SSLType IMAPS
+#AuthMechs Login
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore hotmail-remote
+Account hotmail
+
+MaildirStore hotmail-local
+Path ~/Maildir/hotmail/
+Inbox ~/Maildir/hotmail/Inbox/
+SubFolders Verbatim
+
+Channel hotmail
+Master :hotmail-remote:
+Slave :hotmail-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
