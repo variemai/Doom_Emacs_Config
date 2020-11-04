@@ -14,6 +14,12 @@
 (package! beacon)
 (package! rtags)
 (package! pinentry)
+(package! org-bullets)
+;;(package! ggtags)
+(package! company-rtags)
+(package! flycheck-rtags :disable t)
+(package! irony :disable t)
+(package! company-irony :disable t)
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
 ;; https://github.com/raxod502/straight.el#the-recipe-format

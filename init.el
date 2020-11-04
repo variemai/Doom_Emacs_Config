@@ -22,8 +22,8 @@
        ;;japanese
 
        :completion
-       company           ; the ultimate code completion backend
-       helm              ; the *other* search engine for love and life
+       company        ; the ultimate code completion backend
+       ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ivy               ; a search engine for love and life
 
@@ -73,11 +73,11 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
-       ;;eshell            ; the elisp shell that works everywhere
+       eshell            ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
        ;;term              ; basic terminal emulator for Emacs
-       ;;vterm             ; the best terminal emulation in Emacs
-       gtags
+       vterm             ; the best terminal emulation in Emacs
+       ;;gtags
 
        :checkers
        ;;syntax              ; tasing you for every semicolon you forget
@@ -94,7 +94,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
        lookup              ; navigate your code and its documentation
-       ;;lsp
+       lsp
        ;;macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
@@ -109,7 +109,7 @@
        :lang
        ;;agda              ; types of types of types of types...
        assembly          ; assembly for fun or debugging
-       cc                ; C/C++/Obj-C madness
+       (cc + lsp)                ; C/C++/Obj-C madness
        ;;clojure           ; java with a lisp
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
@@ -147,7 +147,7 @@
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       python            ; beautiful is better than ugly
+       (python +lsp)          ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
@@ -178,38 +178,3 @@
        ;;literate
        (default +bindings +smartparens))
 (setq frame-resize-pixelwise t)
-;; (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-
-;; (require 'rtags)
-;;(cmake-ide-setup)
-;;(add-hook 'c-mode-hook 'rtags-start-process-unless-running)
-;;(add-hook 'c++-mode-hook 'rtags-start-process-unless-running)
-
-;;(use-package rtags
-;;  :ensure t
-;;  :hook (c++-mode . rtags-start-process-unless-running)
-;;  :config (setq rtags-completions-enabled t
-;;		rtags-path "/home/manoj/.emacs.d/rtags/src/rtags.el"
-;;		rtags-rc-binary-name "/home/manoj/.emacs.d/rtags/bin/rc"
-;;		rtags-use-helm t
-;;		rtags-rdm-binary-name "/home/manoj/.emacs.d/rtags/bin/rdm")
-;;  :bind (("C-c E" . rtags-find-symbol)
-;;  	 ("C-c e" . rtags-find-symbol-at-point)
-;;  	 ("C-c O" . rtags-find-references)
-;;  	 ("C-c o" . rtags-find-references-at-point)
-;;  	 ("C-c s" . rtags-find-file)
-;;  	 ("C-c v" . rtags-find-virtuals-at-point)
-;;  	 ("C-c F" . rtags-fixit)
-;;  	 ("C-c f" . rtags-location-stack-forward)
-;;  	 ("C-c b" . rtags-location-stack-back)
-;;  	 ("C-c n" . rtags-next-match)
-;;  	 ("C-c p" . rtags-previous-match)
-;;  	 ("C-c P" . rtags-preprocess-file)
-;;  	 ("C-c R" . rtags-rename-symbol)
-;;  	 ("C-c x" . rtags-show-rtags-buffer)
-;;  	 ("C-c T" . rtags-print-symbol-info)
-;; 	 ("C-c t" . rtags-symbol-type)
-;;  	 ("C-c I" . rtags-include-file)
-;;  	 ("C-c i" . rtags-get-include-file-for-symbol)))
-
-;;(setq rtags-display-result-backend 'helm)
